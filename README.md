@@ -27,6 +27,8 @@ Case history. Every case and message is stored, replacing manual tracking of who
                        │ (Postgres: cases, │
                        │  messages, users) │
                        └────────────────
+
+                       
 FastAPI handles requests, decides which stage a case is in, and builds the prompt for that stage.
 Claude API generates the mediation and escalation messages. Each stage has its own prompt; the case's details are passed in as context. No RAG or vector store, since each case carries all the context it needs.
 Supabase stores users, cases, stage history, and generated messages.
